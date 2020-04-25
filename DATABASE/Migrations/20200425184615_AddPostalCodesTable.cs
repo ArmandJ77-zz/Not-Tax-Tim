@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace DATABASE.Migrations
+namespace NotTaxTim.Database.Migrations
 {
     public partial class AddPostalCodesTable : Migration
     {

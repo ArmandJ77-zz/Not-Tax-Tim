@@ -2,11 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NotTaxTim.Database;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace DATABASE.Migrations
+namespace NotTaxTim.Database.Migrations
 {
     [DbContext(typeof(NotTaxTimDbContext))]
     [Migration("20200425185532_AddCalculationRuleTypeTable")]

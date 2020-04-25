@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DATABASE.Migrations
+namespace NotTaxTim.Database.Migrations
 {
     public partial class InitialCreate : Migration
     {
