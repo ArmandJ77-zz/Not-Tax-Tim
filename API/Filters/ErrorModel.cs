@@ -1,4 +1,4 @@
-﻿namespace Microservice.Api.Filters
+﻿namespace API.Filters
 {
     public class ErrorModel
     {
