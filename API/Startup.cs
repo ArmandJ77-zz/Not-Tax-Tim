@@ -1,8 +1,8 @@
 using DATABASE.Configuration;
-using FluentValidation.AspNetCore;
+using DOMAIN.Configuration;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,8 +33,8 @@ namespace API
 
             services
                 .AddDatabase(_configuration.GetConnectionString("Database"))
-                //                .AddLogic(_configuration)
-                //                .AddMediatR(typeof(LogicServiceCollectionExtensions).Assembly)
+                .AddDomain(_configuration)
+                .AddMediatR(typeof(DomainServiceCollectionExtension).Assembly)
                 ;
         }
 
@@ -42,19 +42,17 @@ namespace API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
+            app
+                .UseHttpsRedirection()
+                .UseRouting()
+                .UseAuthorization()
+                .UseEndpoints(endpoints =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
+                    endpoints.MapControllers();
+                })
+                ;
         }
     }
 }
