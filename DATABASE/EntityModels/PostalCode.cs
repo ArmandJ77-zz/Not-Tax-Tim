@@ -3,6 +3,6 @@
     public class PostalCode
     {
         public long Id { get; set; }
-        public long Code { get; set; }
+        public string Code { get; set; }
     }
 }
