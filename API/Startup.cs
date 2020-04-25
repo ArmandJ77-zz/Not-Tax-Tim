@@ -1,3 +1,4 @@
+using API.Configuration;
 using API.Filters;
 using DATABASE.Configuration;
 using DOMAIN.Configuration;
@@ -22,7 +23,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddCors()
+                .AddCorsRules()
                 .AddControllers()
                 .AddNewtonsoftJson()
                 ;

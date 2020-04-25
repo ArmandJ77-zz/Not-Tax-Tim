@@ -5,8 +5,7 @@ namespace API.Configuration
 {
     public static class CorsServiceCollectionExtensions
     {
-        public static IServiceCollection AddCors(this IServiceCollection services,
-            IConfiguration config)
+        public static IServiceCollection AddCorsRules(this IServiceCollection services)
         {
             services.AddCors(options => options.AddPolicy("Default", builder =>
             {
