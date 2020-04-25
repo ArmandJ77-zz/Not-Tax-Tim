@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DATABASE.Configuration
+namespace NotTaxTim.Database.Configuration
 {
     public static class DatabaseServiceCollectionExtensions
     {

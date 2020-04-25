@@ -1,6 +1,5 @@
 using API.Configuration;
 using API.Filters;
-using DATABASE.Configuration;
 using DOMAIN.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NotTaxTim.Database.Configuration;
 
 namespace API
 {
