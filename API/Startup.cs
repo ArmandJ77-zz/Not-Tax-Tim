@@ -1,3 +1,4 @@
+using API.Filters;
 using DATABASE.Configuration;
 using DOMAIN.Configuration;
 using MediatR;
@@ -26,10 +27,10 @@ namespace API
                 .AddNewtonsoftJson()
                 ;
 
-            //            services
-            //                .AddMvc(options => { options.Filters.Add<ValidationFilter>(); })
-            //                .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<CreateOrderValidator>())
-            //                ;
+            services
+                .AddMvc(options => { options.Filters.Add<ValidationFilter>(); })
+               // .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<somedomainvalidator>())
+                ;
 
             services
                 .AddDatabase(_configuration.GetConnectionString("Database"))
