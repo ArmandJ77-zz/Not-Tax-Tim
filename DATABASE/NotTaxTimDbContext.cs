@@ -8,7 +8,7 @@ namespace NotTaxTim.Database
         public DbSet<PostalCode> PostalCodes { get; set; }
         public DbSet<TaxCalculationType> TaxCalculationTypes { get; set; }
         public DbSet<CalculationRuleType> CalculationRuleTypes { get; set; }
-
+        public DbSet<CalculationResult> CalculationResults { get; set; }
         public NotTaxTimDbContext(DbContextOptions<NotTaxTimDbContext> options)
             : base(options)
         {
