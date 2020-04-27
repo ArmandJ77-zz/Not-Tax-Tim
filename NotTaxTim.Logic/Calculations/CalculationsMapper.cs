@@ -17,5 +17,20 @@ namespace NotTaxTim.Logic.Calculations
 
             return result;
         }
+
+        public static CalculationsGetResponse ToGetResponse(this CalculationResult calculationResult)
+        {
+            var result = new CalculationsGetResponse
+            {
+                Id = calculationResult.Id,
+                AnnualIncome = calculationResult.AnnualIncome,
+                TaxCalculationType = calculationResult.TaxCalculationType,
+                TotalTax = calculationResult.TotalTax,
+                PostalCodeId = calculationResult.PostalCodeId,
+                DateCreated = calculationResult.DateCreated
+            };
+
+            return result;
+        }
     }
 }
