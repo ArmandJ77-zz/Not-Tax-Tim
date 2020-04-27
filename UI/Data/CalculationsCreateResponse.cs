@@ -1,4 +1,4 @@
-namespace NotTaxTim.Logic.Calculations.Responses
+﻿namespace UI.Data
 {
     public class CalculationsCreateResponse
     {
@@ -7,6 +7,5 @@ namespace NotTaxTim.Logic.Calculations.Responses
         public decimal AnnualIncome { get; set; }
         public decimal TotalTax { get; set; }
         public decimal NetPay { get; set; }
-
     }
 }

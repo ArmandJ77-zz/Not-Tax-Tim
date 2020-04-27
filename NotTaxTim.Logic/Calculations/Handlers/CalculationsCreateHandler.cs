@@ -46,6 +46,7 @@ namespace NotTaxTim.Logic.Calculations.Handlers
                 TaxCalculationType = calculationType.Id,
                 DateCreated = DateTime.Now,
                 TotalTax = payableTax,
+                NetPay =  request.AnnualIncome - payableTax
             };
 
             await _dbContext.CalculationResults.AddAsync(entity, cancellationToken);

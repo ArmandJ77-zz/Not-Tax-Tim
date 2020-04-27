@@ -10,6 +10,7 @@ namespace NotTaxTim.Logic.Calculations.Responses
         public decimal AnnualIncome { get; set; }
         public decimal TotalTax { get; set; }
         public DateTime DateCreated { get; set; }
+        public decimal NetPay { get; set; }
 
     }
 }

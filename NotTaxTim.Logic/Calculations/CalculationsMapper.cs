@@ -12,7 +12,9 @@ namespace NotTaxTim.Logic.Calculations
                 Id = calculationResult.Id,
                 PostalCode = calculationResult.PostalCode.Code,
                 AnnualIncome = calculationResult.AnnualIncome,
-                TotalTax = calculationResult.TotalTax
+                TotalTax = calculationResult.TotalTax,
+                NetPay = calculationResult.NetPay
+
             };
 
             return result;
@@ -27,7 +29,8 @@ namespace NotTaxTim.Logic.Calculations
                 TaxCalculationType = calculationResult.TaxCalculationType,
                 TotalTax = calculationResult.TotalTax,
                 PostalCodeId = calculationResult.PostalCodeId,
-                DateCreated = calculationResult.DateCreated
+                DateCreated = calculationResult.DateCreated,
+                NetPay = calculationResult.NetPay
             };
 
             return result;

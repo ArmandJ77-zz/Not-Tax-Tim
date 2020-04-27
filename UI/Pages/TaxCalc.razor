@@ -1,0 +1,44 @@
+﻿@page "/"
+@using UI.Data
+@inject NotTaxTimCalculationsService CalculationsService
+
+<h1>Not Tax Tim</h1>
+<h3>It calculates tax</h3>
+
+<EditForm Model="@_createModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <p>Post Code</p>
+    <InputText id="PostalCode" @bind-Value="_createModel .PostalCode" />
+    <br />
+    <br />
+    <p>Annual Income</p>
+    <InputNumber id="AnnualIncome" @bind-Value="_createModel .AnnualIncome" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@if (_response == null)
+{
+    <p>Complete form above then hit submit</p>
+}
+else
+{
+    <br />
+    <br />
+    <p>Postal Code: @_response.PostalCode</p>
+    <p>Annual Income: @_response.AnnualIncome</p>
+    <p>Total Tax Income: @_response.TotalTax</p>
+    <p>-------------------------------------------------------</p>
+    <p>Net Pay: @_response.NetPay </p>
+}
+
+@code {
+    private CalculationsCreateCommand _createModel = new CalculationsCreateCommand();
+    private CalculationsCreateResponse _response = null;
+    private async Task HandleValidSubmit()
+    {
+        _response = await CalculationsService.Calculate(_createModel);
+
+    }
+}

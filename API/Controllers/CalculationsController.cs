@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NotTaxTim.Logic.Calculations.Commands;
+using NotTaxTim.Logic.Calculations.Queries;
 using System.Threading.Tasks;
 
 namespace NotTaxTim.Api.Controllers
@@ -14,6 +15,13 @@ namespace NotTaxTim.Api.Controllers
         public CalculationsController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var result = await _mediator.Send(new CalculationsGetQuery());
+            return Ok(result);
         }
 
         [HttpPost]

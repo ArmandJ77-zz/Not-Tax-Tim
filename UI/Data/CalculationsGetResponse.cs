@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace NotTaxTim.Database.EntityModels
+namespace UI.Data
 {
-    public class CalculationResult
+    public class CalculationsGetResponse
     {
         public long Id { get; set; }
         public long PostalCodeId { get; set; }
@@ -10,9 +10,5 @@ namespace NotTaxTim.Database.EntityModels
         public decimal AnnualIncome { get; set; }
         public decimal TotalTax { get; set; }
         public DateTime DateCreated { get; set; }
-        public decimal NetPay { get; set; }
-
-        public PostalCode PostalCode { get; set; }
-        public TaxCalculationType CalculationType { get; set; }
     }
 }
