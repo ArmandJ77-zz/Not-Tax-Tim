@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace API.Controllers
+namespace NotTaxTim.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
