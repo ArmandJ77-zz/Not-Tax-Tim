@@ -51,6 +51,19 @@ Run the application:
 2. Ensure that multi project setup is selceted for both the NotTaxTim.Api and UI projects
 
 
+Run Integration Tests:
+
+Integration tests are setup to mock REST Cals via the API.
+
+1. Ensure docker and migrations is up and running
+2. Execute the following command while while in the Not-Tax-Tim Directory
+
+```
+
+dotnet test
+
+```
+
 ## Calculations
 
 Each postal code is linked to a type of Tax calculation:
