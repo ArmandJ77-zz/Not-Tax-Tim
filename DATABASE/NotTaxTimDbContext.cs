@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NotTaxTim.Database.EntityModels;
-using System.Linq;
 
 namespace NotTaxTim.Database
 {
@@ -14,12 +13,5 @@ namespace NotTaxTim.Database
             : base(options)
         {
         }
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (optionsBuilder.Options.Extensions.All(e =>
-//                e.GetType().FullName !=
-//                "Microsoft.EntityFrameworkCore.InMemory.Infrastructure.Internal.InMemoryOptionsExtension")) ;
-//        }
-
     }
 }
